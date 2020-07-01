@@ -1,2 +1,2 @@
 # TheBigBot
-A discord bot made using discord.py and cogs that can play music from youtube links, search google images for the top result, roll a dice, perform simple math, and I'll probably add some other miscellaneous functions later.
+A discord bot made using discord.py and cogs that can play music from youtube links, search google images for the top result, roll a dice, perform simple math, and I'll probably add some other miscellaneous functions later. As I don't have much knowledge of SQL and databases, this bot can only play music in one server at a time, as it downloads the song locally onto the user's hard drive and then plays it from there. In a future update I might add the ability to play multiple songs on multiple servers, but it won't be soon.
