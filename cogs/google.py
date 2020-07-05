@@ -7,8 +7,19 @@ from bs4 import BeautifulSoup
 from mainbot import client
 from discord.ext import commands
 from discord.utils import get
-gis = GoogleImagesSearch('API key', 'cx')
+
 # Created by coolfav on Github
+
+apikeyfile = open("apikey.txt", 'r')
+apikey = apikeyfile.read()
+apikeyfile.close()
+
+cxfile = open("cx.txt", 'r')
+cx = cxfile.read()
+cxfile.close()
+
+gis = GoogleImagesSearch(apikey, cx)
+
 
 class Google(commands.Cog):
 
@@ -44,11 +55,12 @@ class Google(commands.Cog):
         if Images_infile2 is False:
             return await ctx.send("Error: something happened. Try again if you like.")
         q = " ".join(imaged)
+        start = 1
         _search_params = {
             'q': q,
             'searchType': 'image',
             'num': num,
-            'start': 1,
+            'start': start,
             'safe': 'medium',
             'fileType': 'jpg',
             'imgType': None,
@@ -66,6 +78,7 @@ class Google(commands.Cog):
         for image in os.listdir('D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images'):
             if image.startswith("image"):
                 await ctx.send(file=discord.File(f'D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images\{image}'))
+
 
 def setup(client):
     client.add_cog(Google(client))

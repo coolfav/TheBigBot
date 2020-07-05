@@ -1,11 +1,11 @@
 # TheBigBot
-Beta v1.0
+Beta v2.0
 
 made by coolfav on Github
 
 # Requirements if you want to use this source code for your own bot:
 
-- Any python IDE
+- Python 3.8 interpreter (could possibly work with 3.7 or below)
 
 - PIP
 
@@ -21,14 +21,13 @@ made by coolfav on Github
 
 # Instructions:
 
-1. Change all of the directory locations in the code to the directory where you placed the files you downloaded or equivalent (you will need to pay attention a little for this)
-2. Replace the "token" at the bottom of mainbot.py with the token of your discord bot (you can make one at https://discord.com/developers/applications)
-3. Make a project at https://console.developers.google.com/apis/dashboard
-4. Enable Custom Search API from https://console.developers.google.com/apis/library/customsearch.googleapis.com?q=search&id=4b0c5e50-0a7a-46cc-84f4-5aabeaebf6f2&project=tutorialproject-281816&folder&organizationId
-5. Create an API Key from the credentials tab for your project and replace 'API key' near the top of google.py with that
-6. Visit https://cse.google.com/cse/all and in the web form where you create/edit your custom search engine enable "Image search" option and for "Sites to search" option select "Search the entire web". Then copy the CX key after "https://cse.google.com/cse?cx=" in your custom search engine's public URL, and replace "cx" near the top of google.py with that.
-7. Run mainbot.py
-8. As long as your file is running, the bot should work as intended (as long as there aren't any bugs)
+1. Create a file called "token.txt" in the working/main directory (where mainbot.py is) containing ONLY the token of your discord bot (you can make one at https://discord.com/developers/applications)
+2. Make a project at https://console.developers.google.com/apis/dashboard
+3. Enable Custom Search API from https://console.developers.google.com/apis/library/customsearch.googleapis.com?q=search&id=4b0c5e50-0a7a-46cc-84f4-5aabeaebf6f2
+4. Create an API Key from the credentials tab for your project. Create a "apikey.txt" file in the main/wokring directory containing ONLY the API key that you generated from your project.
+5. Visit https://cse.google.com/cse/all and in the web form where you create/edit your custom search engine enable "Image search" option and for "Sites to search" option select "Search the entire web". Then copy the CX key after "https://cse.google.com/cse?cx=" in your custom search engine's public URL, and paste this into a new file "cx.txt" in the working/main directory.
+6. Run mainbot.py
+7. As long as your file is running, the bot should work as intended (as long as there aren't any bugs)
 
 # Commands:
 

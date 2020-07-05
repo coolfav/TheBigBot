@@ -52,7 +52,7 @@ class Voice(commands.Cog):
             print("already in voice channel")
 
         def checkqueue():
-            Queue_infile = os.path.isdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Queue")
+            Queue_infile = os.path.isdir("./Queue")
             if Queue_infile:
                 DIR = os.path.abspath(os.path.realpath("Queue"))
                 length = len(os.listdir(DIR))
@@ -65,7 +65,7 @@ class Voice(commands.Cog):
                     queues.clear()
                     return
                 main_location = os.path.dirname(
-                    os.path.realpath("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Queue"))
+                    os.path.realpath("./Queue"))
                 print("main location = " + main_location)
                 song_path = os.path.abspath(os.path.realpath("Queue") + "\\" + first_file)
                 print("song path = " + song_path)
@@ -76,7 +76,7 @@ class Voice(commands.Cog):
                     if song_exists:
                         os.remove("song.mp3")
                     shutil.move(song_path, main_location)
-                    for file in os.listdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot"):
+                    for file in os.listdir("./"):
                         if file.endswith(".mp3"):
                             os.rename(file, 'song.mp3')
                     voicenew.play(discord.FFmpegPCMAudio("song.mp3"), after=lambda e: checkqueue())
@@ -100,9 +100,9 @@ class Voice(commands.Cog):
             print("exception error")
             return
 
-        Queue_infile = os.path.isdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Queue")
+        Queue_infile = os.path.isdir("./Queue")
         try:
-            Queue_folder = "D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Queue"
+            Queue_folder = "./Queue"
             if Queue_infile is True:
                 print("Removed old Queue Folder")
                 shutil.rmtree(Queue_folder)
@@ -115,7 +115,7 @@ class Voice(commands.Cog):
 
         ydl_opts = {
             'format': 'bestaudio/best',
-            'outtmpl': 'D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\song.mp3',
+            'outtmpl': './song.mp3',
             'postprocessors': [{
                 'key': "FFmpegExtractAudio",
                 'preferredcodec': 'mp3',
@@ -164,9 +164,9 @@ class Voice(commands.Cog):
 
     @commands.command(aliases=["q", "qu", "que"])
     async def queue(self, ctx, *url: str):
-        queue_infile = os.path.isdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Queue")
+        queue_infile = os.path.isdir("./Queue")
         if queue_infile is False:
-            os.mkdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Queue")
+            os.mkdir("./Queue")
         DIR = os.path.abspath(os.path.realpath("Queue"))
         qlength = len(os.listdir(DIR))
         qlength += 1
@@ -203,11 +203,11 @@ class Voice(commands.Cog):
         except:
             await ctx.send("There was nothing currently playing, but")
         queues.clear()
-        queue_infile = os.path.isdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Queue")
+        queue_infile = os.path.isdir("./Queue")
         if queue_infile:
-            shutil.rmtree("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Queue")
+            shutil.rmtree("./Queue")
         try:
-            for filename in os.listdir('D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot'):
+            for filename in os.listdir('./'):
                 if filename.endswith(".mp3"):
                     os.remove(filename)
         except:
