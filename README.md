@@ -51,7 +51,7 @@ Voice:
 
 Google:
 
-/googlewiki /googlew /gwiki /gw [search terms] - provides a link to a wikipedia/fandom/etc. webpage that matches the search term
+/wikipedialink /wikilink /wl /wikil /wikipedial /wlink [search terms] - provides a link to a wikipedia/fandom/etc. webpage that matches the search term
 
 /googleimages /googleimage /googlei /gimages /gi [number of images] [search terms] - sends a number of the top images from Google images to the channel which the command was inputted in
 
