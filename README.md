@@ -69,7 +69,7 @@ Miscellaneous:
 
 - Sometimes a win-5 error will show up that doesn't allow the program to create the directory './Images' when using /googleimage. Just retry the commands and theoretically it should work. If the problem persists, restart the program. If everything else fails and you keep getting this error, please submit an issue request or contact me directly on discord, coolfav#3825.
 
-- Sometimes the /wikipedia function provides a link that isn't from a wikipedia/fandom/etc page. I will probably fix this soon.
+- Sometimes the /wikipedialink function provides a link that isn't from a wikipedia/fandom/etc page. 
 
 - When using /googleimage, the number of photos sent can differ from the number that has been inputted. I don't know why this occurs and it's strange. I hope to find a fix in the near future.
 
