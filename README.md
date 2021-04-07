@@ -1,5 +1,5 @@
 # TheBigBot
-Beta v2.0
+Experimental Beta v2.1
 
 made by coolfav on Github
 
