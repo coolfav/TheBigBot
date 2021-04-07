@@ -35,23 +35,23 @@ class Google(commands.Cog):
 
     @commands.command(aliases=["gi","googleimages","googlei","gimage","gimages"])
     async def googleimage(self, ctx, num:int,*imaged):
-        Images_infile = os.path.isdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images")
+        Images_infile = os.path.isdir(".\Images")
         await ctx.send("This might take a few seconds")
         try:
-            Images_folder = "D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images"
+            Images_folder = ".\Images"
             if Images_infile is True:
                 shutil.rmtree(Images_folder)
                 print("Removed old Images folder")
-                os.mkdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images")
+                os.mkdir(".\Images")
                 print("Made new Images folder")
             else:
-                os.mkdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images")
+                os.mkdir(".\Images")
                 print("images_infile was false, making images folder")
         except:
             print("No old images folder")
-            os.mkdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images")
+            os.mkdir(".\Images")
             print("Made new images folder")
-        Images_infile2 = os.path.isdir("D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images")
+        Images_infile2 = os.path.isdir(".\Images")
         if Images_infile2 is False:
             return await ctx.send("Error: something happened. Try again if you like.")
         q = " ".join(imaged)
@@ -67,17 +67,17 @@ class Google(commands.Cog):
             'imgSize': None,
             'imgDominantColor': None
         }
-        gis.search(search_params=_search_params, path_to_dir='D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images')
+        gis.search(search_params=_search_params, path_to_dir='.\Images')
         count = 1
-        dirrr = "D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images"
+        dirrr = ".\Images"
         for file in os.listdir(dirrr):
             if file.endswith(".jpg"):
-                os.rename(f"D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images\{file}",
-                          f"D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images\image{count}.jpg")
+                os.rename(f".\Images\{file}",
+                          f".\Images\image{count}.jpg")
                 count += 1
-        for image in os.listdir('D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images'):
+        for image in os.listdir('.\Images'):
             if image.startswith("image"):
-                await ctx.send(file=discord.File(f'D:\Miscellaneous\projects\Python VSCodes\DiscordMusicBot\Images\{image}'))
+                await ctx.send(file=discord.File(f'.\Images\{image}'))
 
 
 def setup(client):
